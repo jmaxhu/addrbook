@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Linq;
-using addrbook.Models;
+using Addrbook.Models;
 
-namespace addrbook.Data
+namespace Addrbook.Data
 {
   /// <summary>
   /// Db 初始化
@@ -32,7 +32,7 @@ namespace addrbook.Data
       }
       else
       {
-        var path = Path.Combine(System.AppContext.BaseDirectory, "../../../Data/addrbook.csv");
+        var path = Path.Combine(System.AppContext.BaseDirectory, "../../../Data/Addrbook.csv");
         if (!File.Exists(path))
         {
           throw new Exception($"文件 {path} 不存在");

@@ -5,12 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
-using addrbook.Service;
+using Addrbook.Service;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.EntityFrameworkCore;
-using addrbook.Data;
+using Addrbook.Data;
 
-namespace addrbook
+namespace Addrbook
 {
   /// <summary>
   /// startup class

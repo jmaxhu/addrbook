@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace addrbook.Migrations
+namespace Addrbook.Migrations
 {
     public partial class add_stuff_department : Migration
     {
+        /// <summary>
+        /// Up Migrations
+        /// </summary>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -55,6 +56,9 @@ namespace addrbook.Migrations
                 column: "DepartmentId");
         }
 
+        /// <summary>
+        /// down Migrations
+        /// </summary>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

@@ -1,22 +1,28 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using addrbook.Data;
+using Addrbook.Data;
 
-namespace addrbook.Migrations
+namespace Addrbook.Migrations
 {
+    /// <summary>
+    /// auto generated migrations
+    /// </summary>
     [DbContext(typeof(AddrBookDbContext))]
-    partial class AddrBookDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170130070818_add_stuff_department")]
+    partial class add_stuff_department
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <summary>
+        /// BuildTargetModel
+        /// </summary>
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
 
-            modelBuilder.Entity("addrbook.Models.Department", b =>
+            modelBuilder.Entity("Addrbook.Models.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -29,7 +35,7 @@ namespace addrbook.Migrations
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("addrbook.Models.Stuff", b =>
+            modelBuilder.Entity("Addrbook.Models.Stuff", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -65,9 +71,9 @@ namespace addrbook.Migrations
                     b.ToTable("Stuffs");
                 });
 
-            modelBuilder.Entity("addrbook.Models.Stuff", b =>
+            modelBuilder.Entity("Addrbook.Models.Stuff", b =>
                 {
-                    b.HasOne("addrbook.Models.Department", "Department")
+                    b.HasOne("Addrbook.Models.Department", "Department")
                         .WithMany()
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade);

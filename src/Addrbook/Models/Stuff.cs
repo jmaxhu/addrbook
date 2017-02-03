@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace addrbook.Models
+namespace Addrbook.Models
 {
   /// <summary>
   /// 员工信息

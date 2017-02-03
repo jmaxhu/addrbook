@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using addrbook.Models;
-using addrbook.Service;
+using Addrbook.Models;
+using Addrbook.Service;
 
-namespace addrbook.Controllers
+namespace Addrbook.Controllers
 {
   /// <summary>
   /// StuffController

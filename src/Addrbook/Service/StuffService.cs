@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using addrbook.Models;
-using addrbook.Data;
+using Addrbook.Models;
+using Addrbook.Data;
 
-namespace addrbook.Service
+namespace Addrbook.Service
 {
   /// <summary>
   /// 员工服务

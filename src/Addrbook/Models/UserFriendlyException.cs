@@ -1,6 +1,6 @@
 using System;
 
-namespace addrbook.Models
+namespace Addrbook.Models
 {
   /// <summary>
   /// 用户友好的异常类型

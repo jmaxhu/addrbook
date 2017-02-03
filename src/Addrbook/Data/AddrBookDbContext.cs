@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using addrbook.Models;
+using Addrbook.Models;
 
-namespace addrbook.Data
+namespace Addrbook.Data
 {
   /// <summary>
   /// AddreBook DbContext
