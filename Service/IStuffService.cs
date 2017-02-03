@@ -35,6 +35,7 @@ namespace addrbook.Service
 
     /// <summary>
     /// 更新一个员工
+    /// <param name="stuff">待更新的员工信息</param>
     /// </summary>
     Task Update(Stuff stuff);
   }

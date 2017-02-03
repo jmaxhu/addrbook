@@ -95,10 +95,32 @@ namespace addrbook.Service
 
     /// <summary>
     /// 更新一个员工
+    /// <param name="stuff">待更新的员工信息</param>
     /// </summary>
     public async Task Update(Stuff stuff)
     {
-        await Task.FromResult(false);
+      var dbStuff = context.Stuffs.FirstOrDefault(x => x.Id == stuff.Id);
+      if (dbStuff == null)
+      {
+        throw new UserFriendlyException("待更新的员工不存在");
+      }
+
+      var department = context.Departments.FirstOrDefault(x => x.Id == stuff.DepartmentId);
+      if (department == null)
+      {
+        throw new UserFriendlyException("待更新的员工部门不存在");
+      }
+
+      dbStuff.Name = stuff.Name;
+      dbStuff.Phone = stuff.Phone;
+      dbStuff.InnerPhone = stuff.InnerPhone;
+      dbStuff.Office = stuff.Office;
+      dbStuff.VirtualPhone = stuff.VirtualPhone;
+      dbStuff.PhonePort = stuff.PhonePort;
+      dbStuff.Sex = stuff.Sex;
+      dbStuff.DepartmentId = stuff.DepartmentId;
+
+      await context.SaveChangesAsync();
     }
   }
 }
