@@ -25,12 +25,13 @@ namespace Addrbook.Service
     /// 添加一个员工
     /// </summary>
     /// <param name="stuff">员工信息</param>
-    public async Task Add(Stuff stuff)
+    public async Task<Stuff> Add(Stuff stuff)
     {
       if (stuff == null ||
           stuff.DepartmentId == 0 ||
           string.IsNullOrEmpty(stuff.Name) ||
           string.IsNullOrEmpty(stuff.Phone) ||
+          string.IsNullOrEmpty(stuff.CellPhone) ||
           string.IsNullOrEmpty(stuff.Office))
       {
         throw new UserFriendlyException($"参数错误，{nameof(stuff)}, 请确保部门，姓名，电话等不为空。");
@@ -53,6 +54,8 @@ namespace Addrbook.Service
       stuff.Id = 0;
       context.Stuffs.Add(stuff);
       await context.SaveChangesAsync();
+
+      return stuff;
     }
 
     /// <summary>

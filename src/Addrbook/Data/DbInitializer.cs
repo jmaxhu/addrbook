@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Addrbook.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Addrbook.Data
 {
@@ -12,10 +13,19 @@ namespace Addrbook.Data
   {
     /// <summary>
     /// 初始化方法
+    /// <param name="context">EF DbContext</param>
+    /// <param name="reset">是否重新创建数据库, 默认为false</param>
     /// </summary>
-    public static void Initialize(AddrBookDbContext context)
+    public static void Initialize(AddrBookDbContext context, bool reset = false)
     {
       context.Database.EnsureCreated();
+
+      if (reset)
+      {
+        context.Database.ExecuteSqlCommand("delete from public.\"Stuffs\"");
+        context.Database.ExecuteSqlCommand("delete from public.\"Departments\"");
+        // TODO: add more
+      }
 
       // 初始化部门及人员
       InitStuff(context);

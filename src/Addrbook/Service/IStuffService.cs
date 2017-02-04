@@ -13,7 +13,7 @@ namespace Addrbook.Service
     /// 添加一个员工
     /// <param name="stuff">员工信息</param>
     /// </summary>
-    Task Add(Stuff stuff);
+    Task<Stuff> Add(Stuff stuff);
 
     /// <summary>
     /// 搜索一个员工
